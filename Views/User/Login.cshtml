@@ -1,0 +1,62 @@
+﻿@model FoodWebAppMvc.Models.SignupLogin
+
+@{
+    @* ViewBag.Title = "Login"; *@
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .form-container {
+    display: flex;
+    justify-content: flex-start; /* Align the container to the left */
+    align-items: center;
+    height: 70vh;
+    padding-left: 500px; /* Add some padding to the left to create some space */
+    }
+</style>
+
+<form asp-action="Login" asp-controller="User" method="post">
+    @Html.AntiForgeryToken()
+    <main id="main-container" class="main-container">
+        <div class="form-container">
+            <div class="login-form-container" >
+                <div class="login-register-form">
+                    <div class="section-content m-b-40">
+                        <h1 class="section-content__title text-center">Welcome Back,</h1>
+                    </div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @* <div class="text-danger">@ViewBag.Message</div> *@
+                    <div class="form-box__single-group">
+                        <label asp-for="Email" class="control-label" for="form-username"></label>
+                        <input asp-for="Email" class="form-control form-highlight" id="form-username" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-box__single-group">
+                        <label asp-for="Password" class="control-label" for="form-username-password"></label>
+                        <div class="password__toggle">
+                            <input asp-for="Password" class="form-control form-highlight" id="form-username-password" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                            @* <span data-toggle="#form-username-password" class="password__toggle--btn fa fa-fw fa-eye"></span> *@
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between flex-wrap m-tb-20">
+                        @* <label for="account-remember">
+                            <input type="checkbox" name="account-remember" id="account-remember">
+                            <span>Remember me</span>
+                        </label> *@
+                        <a class="link--gray" href="">Forgot Password?</a>
+                    </div>
+                    <br>
+                    @* <button class="btn btn--box btn--medium btn--radius btn--black btn--black-hover-green btn--uppercase font--semi-bold" type="submit">LOGIN</button> *@
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary" type="submit">Login</button>
+                    </div>
+
+                    <br>
+                    <a class="link--yellow" asp-action="Signup" asp-controller="User">New User?, Register here.</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </main>
+</form>

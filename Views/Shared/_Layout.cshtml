@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FoodWebAppMvc</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FoodWebAppMvc.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="User" asp-action="Index">
+                    <img src="~/image/logo.png" alt="Logo" style="max-width:100px;height:auto; margin-left: 40px;" />
+                </a>
+                    
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end pr-3">
+
+
+                <ul class="navbar-nav"> 
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-bold nav-link-hover" asp-controller="Menu" asp-action="Index">Home</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-bold nav-link-hover" asp-controller="Home" asp-action="AboutUs">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-bold nav-link-hover" asp-controller="Home" asp-action="Gallery">Gallery</a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <div class="icon">
+                                <a class="nav-link nav-link-bold nav-link-hover" asp-controller="Cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i></a>
+                            </div>
+                            <li class="nav-item">
+                                <a class="nav-link nav-link-bold nav-link-hover" asp-controller="Home" asp-action="Logout">Logout</a>
+                            </li>
+                        
+                        </li>
+                    }
+                    else
+                    {
+                       <a class="nav-link dropdown-toggle nav-link-bold nav-link-hover" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item nav-link nav-link-bold nav-link-hover" asp-controller="User" asp-action="Login">User Login</a>
+                            <a class="dropdown-item nav-link nav-link-bold nav-link-hover" asp-controller="Admin" asp-action="Login">Admin Login</a>
+                        </div>
+
+                    }
+                </ul>
+
+            </div>
+
+            </div>
+            
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - YumSpot Restaurant - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

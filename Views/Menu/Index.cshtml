@@ -1,0 +1,72 @@
+﻿@* @model List<FoodWebAppMvc.Models.Products>
+
+@{
+    ViewBag.Title = "Menu";
+}
+
+@{ 
+    var userName = Context.Session.GetString("UserName"); // retrieve user name from session
+    var greetingMessage = "Welcome" + (!string.IsNullOrEmpty(userName) ? ", " + userName : "") + "!"; // create greeting message with user name
+}
+
+
+<h1 style="text-align: center;color:#fac031">@greetingMessage</h1>
+
+
+@* <span><h1 style="text-align: center">Menu</h1></span> *@
+
+@* <div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-3">
+        <div class="card">
+            <img src="~/image/@(string.Format("{0}.jpg",item.ProductName.Replace(" ", "")))" class="card-img-top image-padding" width=150px height=245px alt="Food Item Image">
+            <div class="card-body text-center"> <!-- Added text-center class -->
+                <h5 class="card-title">@item.ProductName</h5>
+                <h5>₹@item.ProductPrice</h5>
+                <form method="post" action="/Cart/AddToCart">
+                    <input type="hidden" name="itemId" value="@item.id" />
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    } *@
+@* </div> *@
+
+@model List<FoodWebAppMvc.Models.Products>
+
+@* @{
+    ViewBag.Title = "Menu";
+} *@
+
+@{ 
+    var userName = Context.Session.GetString("UserName"); // retrieve user name from session
+    var greetingMessage = "Welcome" + (!string.IsNullOrEmpty(userName) ? ", " + userName : "") + "!"; // create greeting message with user name
+}
+
+
+<h1 style="text-align: center;color:#fac031">@greetingMessage</h1>
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="~/image/@(string.Format("{0}.jpg",item.ProductName.Replace(" ", "")))" class="card-img-top image-padding" width=150px height=245px alt="Food Item Image">
+                <div class="card-body text-center">
+                    <h5 class="card-title">@item.ProductName</h5>
+                    <h5>₹@item.ProductPrice</h5>
+                    <form method="post" action="/Cart/AddToCart">
+                        <input type="hidden" name="itemId" value="@item.id" />
+                        <button type="submit" class="btn btn-primary">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+

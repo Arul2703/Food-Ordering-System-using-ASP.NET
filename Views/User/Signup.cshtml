@@ -1,0 +1,65 @@
+﻿@model FoodWebAppMvc.Models.SignupLogin
+
+@{
+    ViewBag.Title = "Signup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-content m-b-40">
+                    <h1 class="section-content__title text-center">SignUp Now</h1>
+                </div>
+            </div>
+           <div class="col-lg-6 col-12 register-container mx-auto">
+                <div class="login-form-container">
+                    @* <h5 class="sidebar__title">Register</h5> *@
+                    <form asp-controller="User" asp-action="Signup">
+                        <div class="login-register-form">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="text-danger">@ViewBag.Message</div>
+                            <div class="form-group">
+                                <label asp-for="Name" class="form-label">Name *</label>
+                                <input asp-for="Name" class="form-control form-highlight" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="form-label">Email address *</label>
+                                <input asp-for="Email" class="form-control form-highlight"/>
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label asp-for="Password" class="form-label">Password *</label>
+                                <div class="input-group">
+                                    <input asp-for="Password" type="password" class="form-control form-highlight" id="form-register-username-password"/>
+                                    @* <button class="btn btn-outline-secondary" type="button" data-bs-toggle="button" data-bs-target="#form-register-username-password" aria-pressed="false">
+                                        <i class="fa fa-fw fa-eye"></i>
+                                    </button> *@
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label asp-for="ConfirmPassword" class="form-label">Confirm Password *</label>
+                                <div class="input-group">
+                                    <input asp-for="ConfirmPassword" type="password" class="form-control form-highlight" id="form-register-username-confrm-password" />
+                                    @* <button class="btn btn-outline-secondary" type="button" data-bs-toggle="button" data-bs-target="#form-register-username-confrm-password" aria-pressed="false">
+                                        <i class="fa fa-fw fa-eye"></i>
+                                    </button> *@
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">REGISTER</button>
+                            </div>
+
+                        </div>
+                    </form>
+                    <br>
+                    <a class="link-gray" asp-controller="User" asp-action="Login">Already registered? Login Here.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
