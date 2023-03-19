@@ -1,0 +1,411 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+.men_text {
+  padding-top: 150px;
+}
+.dropdown-menu {
+  margin-right: 10px;
+}
+
+.nav-link {
+  margin-right: 20px;
+}
+
+body {
+  overflow-x: hidden;
+}
+.image-padding {
+  padding: 20px;
+}
+
+.nav-item nav ul{
+  list-style: none;
+}
+
+.nav-item nav ul li{
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.nav-item nav ul li a{
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 17px;
+  transition: 0.1s;
+}
+
+.nav-item nav ul li a::after{
+  content: '';
+  width: 0;
+  height: 2px;
+  background: #fac031;
+  display: block;
+  transition: 0.2s linear;
+}
+
+.nav-item nav ul li a:hover::after{
+  width: 100%;
+}
+
+.nav-item nav ul li a:hover{
+  color: #fac031;
+}
+
+.main{
+  height: 500px;
+  margin-top: -75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 130px;
+}
+
+.main .men_text h1{
+  font-size: 60px;
+  position: relative;
+  top: -90px;
+  left: 20px;
+}
+.login-item {
+  margin-right: 30px;
+}
+
+
+.main .men_text h1 span{
+  margin-left: 15px;
+  color: #fac031;
+  font-family: mv boli;
+  line-height: 22px;
+  font-size: 70px;
+}
+
+.main .main_image img{
+  width: 600px;
+  position: relative;
+  left: 70px;
+}
+
+p{
+  width: 650px;
+  text-align: justify;
+  position: relative;
+  left: 123px;
+  bottom: 120px;
+  line-height: 22px;
+}
+
+.main_btn{
+  background: #fac031;
+  position: relative;
+  left: 123px;
+  bottom: 30px;
+  width: 150px;
+  cursor: pointer;
+  padding: 12px 25px;
+}
+
+.main_btn a{
+  color: #fff;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+.main_btn i{
+  color: #fff;
+  transition: 0.3s;
+}
+
+.main_btn:hover i{
+  transform: translateX(7px);
+} 
+
+.btn-primary {
+  background-color: #FABE38;
+  border-color: #FABE38;
+}
+.btn-primary:hover {
+  background-color: #fff;
+  font-weight: bold;
+  color: #FABE38;
+  border-color: #FABE38;
+}
+
+
+
+.form-group:hover label.form-label,
+.form-group:hover input.form-control {
+  border-color: #fac031;
+}
+.form-highlight:focus,
+.form-highlight:active {
+  border-color: #fac031;
+  box-shadow: none;
+}
+
+.nav-link-hover:hover {
+  color: #fac031;
+  border-bottom: 2px solid #fac031;
+}
+
+
+
+/*About*/
+
+.about{
+  width: 100%;
+  height: 100vh;
+  padding: 70px 0;
+}
+.nav-link-bold {
+  font-weight: bold;
+}
+
+.about .about_main{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.about .about_main .image img{
+  width: 800px;
+  position: relative;
+  top: 60px;
+}
+
+.about .about_main .about_text h1 span{
+  color: #fac031;
+  margin-right: 15px;
+  font-family: mv boli;
+}
+
+.about .about_main .about_text h1{
+  font-size: 55px;
+  position: relative;
+  bottom: 50px;
+}
+/* .navbar-nav > li:not(.login-item) {
+  display: none;
+} */
+.about .about_main .about_text h3{
+  font-size: 30px;
+  margin: 0 0 50px 0;
+}
+
+.about .about_main .about_text p{
+  width: 650px;
+  text-align: justify;
+  margin-right: 30px;
+  line-height: 22px;
+}
+.about_text p {
+  margin: 0;
+  padding: 0;
+}
+
+.about .about_btn{
+  background: #fac031;
+  padding: 12px 25px;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  left: 55%;
+  bottom: 30px;
+}
+
+/*Gallary*/
+
+.gallary{
+  width: 100%;
+  padding: 70px 0;
+}
+
+.gallary h1{
+  font-size: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallary h1 span{
+  margin-left: 15px;
+  color: #fac031;
+  font-family: mv boli;
+}
+
+.gallary h1 span::after{
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #fac031;
+  display: block;
+  position: relative;
+  bottom: 15px;
+}
+
+.gallary .gallary_image_box{
+  width: 95%;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.gallary .gallary_image_box .gallary_image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+}
+
+.gallary .gallary_image_box .gallary_image img{
+  width: 100%;
+  transition: .3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover img{
+  opacity: 0.4;
+}
+
+.gallary .gallary_image_box .gallary_image h3{
+  position: absolute;
+  font-size: 35px;
+  margin-bottom: 130px;
+  color: #fac031;
+  font-family: polo;
+  z-index: 5;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover h3{
+  opacity: 1;
+}
+
+.gallary .gallary_image_box .gallary_image p{
+  position: absolute;
+  width: 400px;
+  margin-top: 30px;
+  text-align: center;
+  color: white;
+  line-height: 22px;
+  opacity: 0;
+  z-index: 5;
+  transition: 0.3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover p{
+  opacity: 1;
+}
+
+.gallary .gallary_image_box .gallary_image .gallary_btn{
+  position: absolute;
+  margin-top: 180px;
+  color: #000;
+  background: #fac031;
+  padding: 7px 25px;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(45px);
+  z-index: 5;
+  transition: 0.3s;
+}
+
+.gallary .gallary_image_box .gallary_image:hover .gallary_btn{
+  opacity: 1;
+  transform: translateY(0);
+}
+a.link--yellow {
+  color: #1643daf0;
+  
+  text-decoration: none;
+}
+
+a.link--yellow:hover {
+  color: #fac031;
+  text-decoration: none;
+}
+
+.register-container{
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  color: #fac031;
+}
+
+
+/* **** */
+section .main{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 130px;
+}
+
+section .main .men_text h1{
+  font-size: 60px;
+  position: relative;
+  top: -90px;
+  left: 20px;
+}
+
+section .main .men_text h1 span{
+  margin-left: 15px;
+  color: #fac031;
+  font-family: mv boli;
+  line-height: 22px;
+  font-size: 70px;
+}
+
+section .main .main_image img{
+  width: 700px;
+  position: relative;
+  left: 70px;
+}
+
+section p{
+  width: 650px;
+  text-align: justify;
+  position: relative;
+  left: 123px;
+  bottom: 120px;
+  line-height: 22px;
+}
+
+section .main_btn{
+  background: #fac031;
+  position: relative;
+  left: 123px;
+  bottom: 30px;
+  width: 150px;
+  cursor: pointer;
+  padding: 12px 25px;
+}
+
+section .main_btn a{
+  color: #fff;
+  margin-right: 5px;
+  text-decoration: none;
+}
+
+section .main_btn i{
+  color: #fff;
+  transition: 0.3s;
+}
+
+section .main_btn:hover i{
+  transform: translateX(7px);
+}
+/* ......... */
